@@ -21,7 +21,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navItems = [
     { label: 'HOME', id: 'home', target: 'heroSection' },
-    { label: 'TECH LAB', id: 'tech', target: 'techThemeSection' },
     { label: 'SKILLS', id: 'skills', target: 'skills' },
     { label: 'CASE STUDIES', id: 'projects', target: 'projects' },
     { label: 'EDUCATION', id: 'education', target: 'education' },
