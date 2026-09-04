@@ -112,7 +112,7 @@ export const EducationSection: React.FC = () => {
           marginBottom: '1.5rem',
         }}
       >
-        {credentials.map((item) => (
+        {credentials.filter((item) => item.id !== 'hsc').map((item) => (
           <div
             key={item.id}
             className="glass-panel"

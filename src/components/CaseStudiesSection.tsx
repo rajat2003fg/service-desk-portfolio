@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 export const CaseStudiesSection: React.FC = () => {
-  const [filter, setFilter] = useState<'all' | 'hardware' | 'os' | 'network' | 'data'>('all');
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
   const cases = [
@@ -101,7 +100,7 @@ export const CaseStudiesSection: React.FC = () => {
     },
   ];
 
-  const filteredCases = filter === 'all' ? cases : cases.filter((c) => c.type === filter);
+  const visibleCases = cases.slice(0, 3);
 
   return (
     <section className="content-section" id="projects">
@@ -119,73 +118,6 @@ export const CaseStudiesSection: React.FC = () => {
         </p>
       </div>
 
-      {/* Filter Tabs */}
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '0.5rem',
-          flexWrap: 'wrap',
-          marginBottom: '1.75rem',
-        }}
-      >
-        {[
-          { id: 'all', label: 'All Incidents (5)' },
-          { id: 'hardware', label: '🖥️ PC Hardware' },
-          { id: 'os', label: '🪟 Windows OS & Boot' },
-          { id: 'network', label: '🌐 Networking' },
-          { id: 'data', label: '📊 SQL & Automation' },
-        ].map((f) => (
-          <button
-            key={f.id}
-            type="button"
-            onClick={() => setFilter(f.id as any)}
-            style={{
-              padding: '0.45rem 1.15rem',
-              borderRadius: '24px',
-              border: filter === f.id ? '1px solid var(--accent-color)' : '1px solid var(--glass-border)',
-              backgroundColor: filter === f.id ? 'rgba(138, 99, 248, 0.22)' : 'rgba(20, 20, 25, 0.5)',
-              color: filter === f.id ? '#fff' : 'var(--text-secondary)',
-              fontSize: '0.82rem',
-              fontWeight: 600,
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-            }}
-          >
-            {f.label}
-          </button>
-        ))}
-      </div>
-
-      {/* Top Status Banner: spans 100% full width like Telemetry */}
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          backgroundColor: 'rgba(15, 15, 24, 0.7)',
-          border: '1px solid var(--glass-border)',
-          borderRadius: '10px',
-          padding: '0.65rem 1.25rem',
-          marginBottom: '1.5rem',
-          fontSize: '0.8rem',
-          color: 'var(--text-secondary)',
-          flexWrap: 'wrap',
-          gap: '0.5rem',
-          width: '100%',
-          boxSizing: 'border-box',
-        }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <span className="pulse-dot" style={{ width: '7px', height: '7px', backgroundColor: '#00FF88' }} />
-          <span style={{ color: '#fff', fontWeight: 600 }}>Resolved Incident Log Archive</span>
-          <span style={{ color: 'var(--text-secondary)' }}>• 100% Verified Root-Cause Resolution on First or Guided Triage</span>
-        </div>
-        <div style={{ color: '#00FF88', fontWeight: 600 }}>
-          {filteredCases.length} Cases Displayed
-        </div>
-      </div>
-
       {/* Incident Cards Grid: Matches Telemetry gridTemplateColumns minmax */}
       <div
         style={{
@@ -196,7 +128,7 @@ export const CaseStudiesSection: React.FC = () => {
           boxSizing: 'border-box',
         }}
       >
-        {filteredCases.map((cs) => {
+        {visibleCases.map((cs) => {
           const isExpanded = expandedId === cs.id;
 
           return (

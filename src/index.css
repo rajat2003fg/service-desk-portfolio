@@ -29,6 +29,12 @@
   padding: 0;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  #interactiveParticleCanvas {
+    display: none;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

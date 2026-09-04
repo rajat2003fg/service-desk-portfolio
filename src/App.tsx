@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroContent } from './components/HeroContent';
 import { HeroFooter } from './components/HeroFooter';
-import { TechConsoleSection } from './components/TechConsoleSection';
 import { SkillsSection } from './components/SkillsSection';
 import { CaseStudiesSection } from './components/CaseStudiesSection';
 import { EducationSection } from './components/EducationSection';
@@ -59,7 +58,6 @@ export default function App() {
   useEffect(() => {
     const sections = [
       { id: 'heroSection', navId: 'home' },
-      { id: 'techThemeSection', navId: 'tech' },
       { id: 'skills', navId: 'skills' },
       { id: 'projects', navId: 'projects' },
       { id: 'education', navId: 'education' },
@@ -90,7 +88,6 @@ export default function App() {
 
   return (
     <div style={{ position: 'relative', width: '100%', minHeight: '100vh', backgroundColor: 'var(--bg-color)', overflowX: 'hidden' }}>
-      {/* Interactive Mouse Hover Particle Effect Canvas */}
       <ParticleBackground />
 
       {/* Frosted Glass Ambient Lighting Effects */}
@@ -153,7 +150,7 @@ export default function App() {
 
         {/* Hero Footer Stats & Quick Navigation */}
         <HeroFooter
-          onScrollClick={() => scrollToSection('techThemeSection')}
+          onScrollClick={() => scrollToSection('skills')}
           onOpenAvailability={() => scrollToSection('contact')}
           onSelectSection={(tab) => {
             const map: Record<string, string> = {
@@ -170,22 +167,19 @@ export default function App() {
 
       {/* ALL CONTENT SECTIONS: DISPLAYED SEQUENTIALLY ONE BELOW ANOTHER */}
       <main id="singleScrollContainer" style={{ width: '100%', position: 'relative' }}>
-        {/* SECTION 2: TECH THEME DIAGNOSTICS & TELEMETRY */}
-        <TechConsoleSection />
-
-        {/* SECTION 3: CORE SKILLS & L1 TOOLKIT */}
+          {/* SECTION 2: CORE SKILLS & L1 TOOLKIT */}
         <SkillsSection />
 
-        {/* SECTION 4: TROUBLESHOOTING CASE STUDIES */}
+          {/* SECTION 3: TROUBLESHOOTING CASE STUDIES */}
         <CaseStudiesSection />
 
-        {/* SECTION 5: EDUCATION & CERTIFICATIONS */}
+          {/* SECTION 4: EDUCATION & CERTIFICATIONS */}
         <EducationSection />
 
-        {/* SECTION 6: RESUME & CAREER PROFILE */}
+          {/* SECTION 5: RESUME & CAREER PROFILE */}
         <ResumeSection onDownloadResume={handleDownloadResume} />
 
-        {/* SECTION 7: CONTACT & OPPORTUNITIES */}
+          {/* SECTION 6: CONTACT & OPPORTUNITIES */}
         <ContactSection />
       </main>
 
