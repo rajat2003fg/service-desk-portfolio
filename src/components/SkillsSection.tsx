@@ -78,7 +78,7 @@ export const SkillsSection: React.FC = () => {
         </p>
       </div>
 
-      {/* Categories Grid: Balanced full-width cards identical to Telemetry layout */}
+      {/* Compact skill domains */}
       <div
         style={{
           display: 'grid',
@@ -94,7 +94,7 @@ export const SkillsSection: React.FC = () => {
             key={cat.id}
             className="glass-panel"
             style={{
-              padding: '1.75rem',
+              padding: '1.35rem',
               borderRadius: '16px',
               display: 'flex',
               flexDirection: 'column',
@@ -129,50 +129,28 @@ export const SkillsSection: React.FC = () => {
               {cat.summary}
             </p>
 
-            {/* Skills Sub-List: If single category, expands to 2-column or 3-column subgrid so it fills the entire width */}
             <div
               style={{
-                display: 'grid',
-                gridTemplateColumns:
-                  '1fr',
-                gap: '0.75rem',
-                marginTop: 'auto',
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '0.45rem',
+                marginTop: '0.25rem',
               }}
             >
-              {cat.skills.map((skill, sIdx) => (
-                <div
+              {cat.skills.slice(0, 5).map((skill, sIdx) => (
+                <span
                   key={sIdx}
                   style={{
-                    padding: '0.75rem 0.85rem',
+                    padding: '0.35rem 0.55rem',
                     backgroundColor: 'rgba(255, 255, 255, 0.025)',
-                    borderRadius: '8px',
+                    borderRadius: '5px',
                     border: '1px solid rgba(255, 255, 255, 0.05)',
+                    fontSize: '0.74rem',
+                    color: '#e5e5e5',
                   }}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.25rem' }}>
-                    <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#fff' }}>
-                      {skill.name}
-                    </span>
-                    <span
-                      style={{
-                        fontSize: '0.68rem',
-                        color: skill.level === 'Certified' ? '#00FF88' : '#5A8CFF',
-                        backgroundColor:
-                          skill.level === 'Certified'
-                            ? 'rgba(0, 255, 136, 0.1)'
-                            : 'rgba(90, 140, 255, 0.1)',
-                        padding: '0.15rem 0.45rem',
-                        borderRadius: '4px',
-                        fontWeight: 700,
-                      }}
-                    >
-                      {skill.level}
-                    </span>
-                  </div>
-                  <div style={{ fontSize: '0.77rem', color: 'var(--text-secondary)', lineHeight: 1.4 }}>
-                    {skill.desc}
-                  </div>
-                </div>
+                  {skill.name}
+                </span>
               ))}
             </div>
           </div>

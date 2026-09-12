@@ -828,6 +828,11 @@ body {
   box-sizing: border-box;
 }
 
+.content-section + .content-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, rgba(14, 14, 22, 0.18), transparent 22%);
+}
+
 @media (max-width: 1024px) {
   .content-section {
     padding: 4rem 2rem;

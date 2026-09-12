@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export const CaseStudiesSection: React.FC = () => {
-  const [expandedId, setExpandedId] = useState<number | null>(null);
-
   const cases = [
     {
       id: 0,
@@ -129,8 +127,6 @@ export const CaseStudiesSection: React.FC = () => {
         }}
       >
         {visibleCases.map((cs) => {
-          const isExpanded = expandedId === cs.id;
-
           return (
             <div
               key={cs.id}
@@ -190,54 +186,6 @@ export const CaseStudiesSection: React.FC = () => {
                   <span>SYMPTOMS REPORTED</span>
                 </div>
                 {cs.problem}
-              </div>
-
-              {/* Diagnostic Steps */}
-              <div style={{ marginBottom: '1rem', flex: 1 }}>
-                <div style={{ fontSize: '0.72rem', color: '#5A8CFF', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '0.4rem', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                  <span>🛠️</span>
-                  <span>ROOT-CAUSE TRIAGE STEPS</span>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
-                  {(isExpanded ? cs.diagnosticSteps : cs.diagnosticSteps.slice(0, 2)).map((step, idx) => (
-                    <div
-                      key={idx}
-                      style={{
-                        fontSize: '0.8rem',
-                        color: 'var(--text-secondary)',
-                        lineHeight: 1.45,
-                        display: 'flex',
-                        gap: '0.5rem',
-                      }}
-                    >
-                      <span style={{ color: 'var(--accent-color)', fontWeight: 700, minWidth: '16px' }}>
-                        {idx + 1}.
-                      </span>
-                      <span>{step}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {cs.diagnosticSteps.length > 2 && (
-                  <button
-                    type="button"
-                    onClick={() => setExpandedId(isExpanded ? null : cs.id)}
-                    style={{
-                      background: 'none',
-                      border: 'none',
-                      color: 'var(--accent-color)',
-                      fontSize: '0.75rem',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      padding: '0.35rem 0 0 0',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.25rem',
-                    }}
-                  >
-                    {isExpanded ? '▲ Show Fewer Steps' : `▼ View All ${cs.diagnosticSteps.length} Diagnostic Steps`}
-                  </button>
-                )}
               </div>
 
               {/* Verified Outcome */}

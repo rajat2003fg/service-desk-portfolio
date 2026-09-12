@@ -72,35 +72,6 @@ export const EducationSection: React.FC = () => {
         </p>
       </div>
 
-      {/* Top Status Banner - spans 100% full width like Telemetry */}
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          backgroundColor: 'rgba(15, 15, 24, 0.7)',
-          border: '1px solid var(--glass-border)',
-          borderRadius: '10px',
-          padding: '0.65rem 1.25rem',
-          marginBottom: '1.5rem',
-          fontSize: '0.8rem',
-          color: 'var(--text-secondary)',
-          flexWrap: 'wrap',
-          gap: '0.5rem',
-          width: '100%',
-          boxSizing: 'border-box',
-        }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <span className="pulse-dot" style={{ width: '7px', height: '7px', backgroundColor: '#00FF88' }} />
-          <span style={{ color: '#fff', fontWeight: 600 }}>Verified Qualifications & Academic Foundation</span>
-          <span style={{ color: 'var(--text-secondary)' }}>• B.Tech degree plus relevant industry certifications</span>
-        </div>
-        <div style={{ color: 'var(--accent-color)', fontWeight: 600 }}>
-          Nagpur University & National Credential Verification
-        </div>
-      </div>
-
       {/* Responsive 4-Card Grid matching Telemetry */}
       <div
         style={{
@@ -192,50 +163,6 @@ export const EducationSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Full-width Technical Foundations Strip */}
-      <div
-        className="glass-panel"
-        style={{
-          padding: '1.25rem 1.5rem',
-          borderRadius: '12px',
-          border: '1px solid var(--glass-border)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '1rem',
-          width: '100%',
-          boxSizing: 'border-box',
-        }}
-      >
-        <div>
-          <span style={{ fontSize: '0.78rem', color: '#00FF88', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.6px', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-            <span>⚡</span>
-            <span>CORE COMPUTER SCIENCE ACADEMIC PILLARS</span>
-          </span>
-          <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
-            Operating Systems • Computer Networks • DBMS • Computer Organization • Data Structures
-          </div>
-        </div>
-        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-          {['English (Fluent)', 'Hindi (Fluent)', 'Marathi (Native)'].map((lang, lIdx) => (
-            <span
-              key={lIdx}
-              style={{
-                fontSize: '0.72rem',
-                color: '#fff',
-                backgroundColor: 'rgba(138, 99, 248, 0.12)',
-                padding: '0.25rem 0.6rem',
-                borderRadius: '6px',
-                border: '1px solid rgba(138, 99, 248, 0.25)',
-                fontWeight: 600,
-              }}
-            >
-              🗣️ {lang}
-            </span>
-          ))}
-        </div>
-      </div>
     </section>
   );
 };
