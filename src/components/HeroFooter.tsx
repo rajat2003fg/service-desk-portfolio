@@ -55,8 +55,8 @@ export const HeroFooter: React.FC<HeroFooterProps> = ({
             role="button"
             tabIndex={0}
           >
-            <span className="stat-number">100%</span>
-            <span className="stat-label">Hands-on Solver ↗</span>
+            <span className="stat-number">L1</span>
+            <span className="stat-label">Hands-on Troubleshooting ↗</span>
           </div>
         </div>
 

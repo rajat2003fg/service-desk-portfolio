@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export const SkillsSection: React.FC = () => {
-  const [selectedFilter, setSelectedFilter] = useState<'all' | 'hardware' | 'os' | 'network' | 'data'>('all');
-
   const categories = [
     {
       id: 'hardware',
@@ -11,7 +9,7 @@ export const SkillsSection: React.FC = () => {
       badge: 'Diagnostics',
       summary: 'Component-level triage, custom desktop building, POST diagnostics, and thermal optimization.',
       skills: [
-        { name: 'Custom Desktop PC Assembly', level: 'Expert', desc: 'Motherboard, CPU cooler, RAM, PSU wiring, and front-panel headers' },
+        { name: 'Custom Desktop PC Assembly', level: 'Hands-on', desc: 'Motherboard, CPU cooler, RAM, PSU wiring, and front-panel headers' },
         { name: 'RAM Memory Testing', level: 'Advanced', desc: 'MemTest86, bad address isolation, and dual-channel configurations' },
         { name: 'Storage Health & Bad Sectors', level: 'Advanced', desc: 'NVMe/SATA SSD testing, SMART logs, and bad block remediation' },
         { name: 'PSU & Power Rail Testing', level: 'Intermediate', desc: 'ATX multimeter checks, reboot under load, and ripple diagnostics' },
@@ -24,13 +22,13 @@ export const SkillsSection: React.FC = () => {
       title: 'Windows OS & System Recovery',
       icon: '🪟',
       badge: 'L1 Service Desk',
-      summary: 'Troubleshooting operating system corruption, driver crashes, registry errors, and startup freezes.',
+      summary: 'Windows OS troubleshooting, driver issues, system recovery, and startup problems.',
       skills: [
-        { name: 'Windows 10 & 11 Deployment', level: 'Expert', desc: 'Clean ISO installation, Rufus USB creation, and partition layout' },
-        { name: 'Driver Management', level: 'Expert', desc: 'DDU display driver uninstalls, rollback, and chipset updates' },
-        { name: 'System Integrity Repairs', level: 'Expert', desc: 'SFC /scannow, DISM component cleanup, and CBS.log inspection' },
+        { name: 'Windows 10 & 11 Deployment', level: 'Hands-on', desc: 'Clean ISO installation, Rufus USB creation, and partition layout' },
+        { name: 'Driver Management', level: 'Hands-on', desc: 'Display driver cleanup, rollback, and chipset updates' },
+        { name: 'System Recovery', level: 'Hands-on', desc: 'SFC /scannow, DISM component checks, and startup troubleshooting' },
         { name: 'BSOD Crash Dump Triage', level: 'Advanced', desc: 'BlueScreenView, minidump analysis, and faulty sys file tracking' },
-        { name: 'Malware & Adware Remediation', level: 'Advanced', desc: 'Safe mode cleanup, rogue startup processes, and quarantine' },
+        { name: 'Malware & Adware Troubleshooting', level: 'Hands-on', desc: 'Safe mode cleanup, rogue startup processes, and quarantine' },
         { name: 'Safe Mode & Recovery Console', level: 'Advanced', desc: 'BCD rebuild, startup repair, and Windows PE emergency boots' },
       ],
     },
@@ -64,11 +62,6 @@ export const SkillsSection: React.FC = () => {
     },
   ];
 
-  const filteredCategories =
-    selectedFilter === 'all'
-      ? categories
-      : categories.filter((cat) => cat.id === selectedFilter);
-
   return (
     <section className="content-section" id="skills">
       {/* Section Header */}
@@ -85,87 +78,18 @@ export const SkillsSection: React.FC = () => {
         </p>
       </div>
 
-      {/* Filter Badges */}
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '0.5rem',
-          flexWrap: 'wrap',
-          marginBottom: '1.75rem',
-        }}
-      >
-        {[
-          { id: 'all', label: 'All Competencies (24)' },
-          { id: 'hardware', label: '🖥️ PC Hardware' },
-          { id: 'os', label: '🪟 Windows OS' },
-          { id: 'network', label: '🌐 Networking' },
-          { id: 'data', label: '📊 SQL & Scripting' },
-        ].map((f) => (
-          <button
-            key={f.id}
-            type="button"
-            onClick={() => setSelectedFilter(f.id as any)}
-            style={{
-              padding: '0.45rem 1.15rem',
-              borderRadius: '24px',
-              border: selectedFilter === f.id ? '1px solid var(--accent-color)' : '1px solid var(--glass-border)',
-              backgroundColor: selectedFilter === f.id ? 'rgba(138, 99, 248, 0.22)' : 'rgba(20, 20, 25, 0.5)',
-              color: selectedFilter === f.id ? '#fff' : 'var(--text-secondary)',
-              fontSize: '0.82rem',
-              fontWeight: 600,
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-            }}
-          >
-            {f.label}
-          </button>
-        ))}
-      </div>
-
-      {/* Top Status Banner - spans 100% full width like Telemetry */}
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          backgroundColor: 'rgba(15, 15, 24, 0.7)',
-          border: '1px solid var(--glass-border)',
-          borderRadius: '10px',
-          padding: '0.65rem 1.25rem',
-          marginBottom: '1.5rem',
-          fontSize: '0.8rem',
-          color: 'var(--text-secondary)',
-          flexWrap: 'wrap',
-          gap: '0.5rem',
-          width: '100%',
-          boxSizing: 'border-box',
-        }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <span className="pulse-dot" style={{ width: '7px', height: '7px', backgroundColor: '#00FF88' }} />
-          <span style={{ color: '#fff', fontWeight: 600 }}>L1 Service Desk Competency Matrix</span>
-          <span style={{ color: 'var(--text-secondary)' }}>• 24 Verified Skills across Hardware, OS, Network & Data</span>
-        </div>
-        <div style={{ color: 'var(--accent-color)', fontWeight: 600 }}>
-          {selectedFilter === 'all' ? 'Showing All 4 Domains' : `Domain Filter Active (${filteredCategories[0]?.title})`}
-        </div>
-      </div>
-
       {/* Categories Grid: Balanced full-width cards identical to Telemetry layout */}
       <div
         style={{
           display: 'grid',
           gridTemplateColumns:
-            filteredCategories.length === 1
-              ? '1fr'
-              : 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
+            'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
           gap: '1.5rem',
           width: '100%',
           boxSizing: 'border-box',
         }}
       >
-        {filteredCategories.map((cat) => (
+        {categories.map((cat) => (
           <div
             key={cat.id}
             className="glass-panel"
@@ -210,9 +134,7 @@ export const SkillsSection: React.FC = () => {
               style={{
                 display: 'grid',
                 gridTemplateColumns:
-                  filteredCategories.length === 1
-                    ? 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))'
-                    : '1fr',
+                  '1fr',
                 gap: '0.75rem',
                 marginTop: 'auto',
               }}
@@ -234,9 +156,9 @@ export const SkillsSection: React.FC = () => {
                     <span
                       style={{
                         fontSize: '0.68rem',
-                        color: skill.level === 'Expert' || skill.level === 'Certified' ? '#00FF88' : '#5A8CFF',
+                        color: skill.level === 'Certified' ? '#00FF88' : '#5A8CFF',
                         backgroundColor:
-                          skill.level === 'Expert' || skill.level === 'Certified'
+                          skill.level === 'Certified'
                             ? 'rgba(0, 255, 136, 0.1)'
                             : 'rgba(90, 140, 255, 0.1)',
                         padding: '0.15rem 0.45rem',

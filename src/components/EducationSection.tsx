@@ -94,7 +94,7 @@ export const EducationSection: React.FC = () => {
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <span className="pulse-dot" style={{ width: '7px', height: '7px', backgroundColor: '#00FF88' }} />
           <span style={{ color: '#fff', fontWeight: 600 }}>Verified Qualifications & Academic Foundation</span>
-          <span style={{ color: 'var(--text-secondary)' }}>• 4 Verified Degrees & Industry Accreditations</span>
+          <span style={{ color: 'var(--text-secondary)' }}>• B.Tech degree plus relevant industry certifications</span>
         </div>
         <div style={{ color: 'var(--accent-color)', fontWeight: 600 }}>
           Nagpur University & National Credential Verification

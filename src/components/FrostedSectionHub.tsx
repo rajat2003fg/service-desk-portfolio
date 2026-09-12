@@ -495,7 +495,7 @@ WHY I'M A FIT FOR THIS ROLE
                     category: 'System Remediation',
                     year: '2023 – 2025',
                     badge: 'OS & Security',
-                    desc: 'Remediated recurring BSODs, system freezes, and malware infections. Utilized SFC/DISM repairs, clean boot diagnostics, safe mode malware extraction, and backup restoration to preserve user files.',
+                    desc: 'Troubleshot recurring BSODs, system freezes, and malware symptoms using SFC/DISM checks, clean boot diagnostics, safe mode, and file-preserving recovery steps.',
                     deliverables: ['BSOD Root-Cause Triage', 'Malware & Adware Eradication', 'System File & Registry Repairs'],
                   },
                   {

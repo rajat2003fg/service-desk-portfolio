@@ -85,7 +85,7 @@ export function generateResumePdf(): void {
   doc.setFontSize(8.8);
   doc.setTextColor(51, 65, 85);
   const summaryText =
-    'B.Tech Computer Engineering graduate (2025) with extensive hands-on expertise in custom desktop PC assembly, motherboard POST diagnostics, Windows OS kernel repairs, and local network troubleshooting. Proven ability to systematically isolate root causes using tools like MemTest86, SFC/DISM, and packet loss diagnostics. Experienced in writing SQL queries to audit customer ticket datasets and logs. Dedicated to patient, empathetic user communication and maintaining high First-Contact Resolution (FCR) rates.';
+    'B.Tech Computer Engineering graduate (2025) with hands-on experience in custom desktop PC assembly, motherboard POST diagnostics, Windows OS troubleshooting and system recovery, and local network troubleshooting. Comfortable isolating root causes with tools such as MemTest86, SFC/DISM, and packet-loss diagnostics. Familiar with SQL queries for ticket datasets and logs, with a patient, user-focused communication style.';
   const summaryLines = doc.splitTextToSize(summaryText, contentWidth);
   doc.text(summaryLines, margin, y);
   y += summaryLines.length * 4.2 + 2;
@@ -141,9 +141,9 @@ export function generateResumePdf(): void {
   const cases = [
     {
       code: 'INC-01',
-      title: 'End-to-End Custom PC Building & Zero-Failure POST Diagnostics',
-      context: 'Assembled high-performance desktop workstation rigs from bare components with zero POST boot failures.',
-      actions: 'Mounted Noctua air cooler with controlled thermal paste spread; installed dual-channel DDR4 memory in motherboard slots 2 & 4; wired modular 24-pin ATX, 8-pin EPS 12V, and PCIe power rails; created UEFI Windows 11 installation media via Rufus (GPT/UEFI non-CSM). Verified 100% stability under 4 hours of AIDA64 stress testing (idle 34°C).',
+      title: 'Custom PC Building & POST Diagnostics',
+      context: 'Assembled desktop systems from individual components and worked through compatibility, cabling, boot, and thermal checks.',
+      actions: 'Mounted the cooler, installed memory, connected motherboard and GPU power, and created UEFI Windows installation media. Confirmed successful boot and stable follow-up checks.',
     },
     {
       code: 'INC-02',
@@ -155,13 +155,13 @@ export function generateResumePdf(): void {
       code: 'INC-03',
       title: 'Hostel & Home Wi-Fi Network Optimization',
       context: 'Eliminated severe evening latency (>600ms), DHCP pool exhaustion, and intermittent connectivity drops.',
-      actions: 'Reconfigured router DHCP pool range (192.168.1.10 – 192.168.1.240) and shortened transient leases to 4 hours; used Wi-Fi Analyzer to shift 2.4GHz RF from congested channel 6 to clean channel 11; assigned Cloudflare (1.1.1.1) and Google (8.8.8.8) DNS resolvers. Stabilized ping to 6ms.',
+      actions: 'Reviewed router status, DHCP settings, device allocation, Wi-Fi channel congestion, DNS resolution, and local connectivity using standard troubleshooting checks.',
     },
     {
       code: 'INC-04',
       title: 'Windows OS Corruption & Malware Remediation Without Data Loss',
       context: 'Treated machine afflicted with recurring "Critical Process Died" BSODs and browser adware hijacks.',
-      actions: 'Booted into Windows Safe Mode with Networking; ran DISM /Online /Cleanup-Image /RestoreHealth against Windows Update binaries; executed SFC /scannow replacing 11 corrupted kernel files; performed multi-stage malware and adware extraction while keeping user files intact.',
+      actions: 'Booted into Windows Safe Mode with Networking, ran DISM and SFC checks, and used Malwarebytes to troubleshoot malware and adware symptoms while keeping user files intact.',
     },
     {
       code: 'INC-05',
@@ -288,7 +288,7 @@ export function generateResumePdf(): void {
   doc.setTextColor(51, 65, 85);
 
   const logistics = [
-    ['Notice Period:', 'Immediate Joiner (0 Days Notice)', 'Shift Flexibility:', 'Available for 24/7 Rotational Shifts'],
+    ['Notice Period:', 'Immediate Joiner (0 Days Notice)', 'Shift Flexibility:', 'Open to rotational shifts'],
     ['Current Location:', 'Nagpur, Maharashtra (Relocation Ready)', 'Languages:', 'English (Fluent), Hindi (Fluent), Marathi (Native)'],
   ];
 

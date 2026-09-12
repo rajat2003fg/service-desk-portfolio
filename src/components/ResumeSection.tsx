@@ -11,7 +11,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onDownloadResume }
     const text = `RAJAT NIMJE
 Nagpur, Maharashtra, India | +91 9049478926 | rajatnimje434@gmail.com
 B.Tech Computer Engineering (2025) - Smt. Radhikatai Pandav College of Engineering
-HackerRank Certified in SQL | Cloud Computing Certified (NPTEL/IIT Kharagpur)
+HackerRank SQL Certification | Cloud Computing Certification (NPTEL/IIT Kharagpur)
 
 TARGET ROLE: L1 Technical Support Analyst / IT Service Desk Engineer
 
@@ -25,7 +25,7 @@ EDUCATION:
 - B.Tech in Computer Engineering | 2021 - 2025 | Smt. Radhikatai Pandav College of Engineering, Nagpur
 - Higher Secondary Certificate (Class XII) | 2020 - 2021 | Shri Ramswami Junior College, Nagpur
 
-AVAILABILITY: Immediate Joiner (0 Days Notice) | Ready for 24/7 Rotational Shifts & Relocation`;
+AVAILABILITY: Immediate Joiner (0 Days Notice) | Open to rotational shifts & relocation`;
 
     navigator.clipboard.writeText(text);
     setCopied(true);
@@ -46,35 +46,6 @@ AVAILABILITY: Immediate Joiner (0 Days Notice) | Ready for 24/7 Rotational Shift
         <p className="section-subheading" style={{ margin: '0 auto' }}>
           Official candidate profile for Global IT Service Desk & L1 Technical Support Analyst roles.
         </p>
-      </div>
-
-      {/* Top Status Banner: spans 100% full width like Telemetry */}
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          backgroundColor: 'rgba(15, 15, 24, 0.7)',
-          border: '1px solid var(--glass-border)',
-          borderRadius: '10px',
-          padding: '0.65rem 1.25rem',
-          marginBottom: '1.5rem',
-          fontSize: '0.8rem',
-          color: 'var(--text-secondary)',
-          flexWrap: 'wrap',
-          gap: '0.5rem',
-          width: '100%',
-          boxSizing: 'border-box',
-        }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <span className="pulse-dot" style={{ width: '7px', height: '7px', backgroundColor: '#00FF88' }} />
-          <span style={{ color: '#fff', fontWeight: 600 }}>Candidate Status: Immediate Joiner</span>
-          <span style={{ color: 'var(--text-secondary)' }}>• 0-Day Notice Period • Available for 24/7 Rotational Shifts</span>
-        </div>
-        <div style={{ color: '#00FF88', fontWeight: 600 }}>
-          Nagpur, Maharashtra • Open to Relocation / Remote / Hybrid
-        </div>
       </div>
 
       {/* Balanced 2-Column Full-Width Dashboard */}
@@ -127,7 +98,7 @@ AVAILABILITY: Immediate Joiner (0 Days Notice) | Ready for 24/7 Rotational Shift
               EXECUTIVE PROFILE
             </h4>
             <p style={{ color: '#e5e5e5', fontSize: '0.88rem', lineHeight: 1.65, margin: 0 }}>
-              B.Tech Computer Engineering graduate (2025) with deep hands-on expertise in custom desktop PC assembly, component diagnostics, Windows OS kernel repair, and network connectivity troubleshooting. Proven ability to systematically isolate root causes using tools like MemTest86, SFC/DISM, and packet loss diagnostics. Experienced in writing SQL queries to audit customer ticket datasets and logs. Dedicated to patient, empathetic user communication and high First-Contact Resolution (FCR) rates.
+              B.Tech Computer Engineering graduate (2025) with hands-on experience in custom desktop PC assembly, component diagnostics, Windows OS troubleshooting and system recovery, and network connectivity troubleshooting. Comfortable isolating root causes with tools such as MemTest86, SFC/DISM, and packet-loss diagnostics. Familiar with SQL queries for ticket datasets and logs, with a patient, user-focused communication style.
             </p>
           </div>
 
@@ -138,9 +109,9 @@ AVAILABILITY: Immediate Joiner (0 Days Notice) | Ready for 24/7 Rotational Shift
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               {[
-                { title: 'Zero POST Boot Failure Record', desc: '100% successful boot rate across all bare-metal desktop builds' },
+                { title: 'Hands-on PC Assembly & Troubleshooting', desc: 'Building desktop systems and checking POST, thermals, storage, and power issues' },
                 { title: 'Hardware Isolation & Breadboarding', desc: 'Rapid elimination of faulty RAM, failing power supplies, and storage bad blocks' },
-                { title: 'OS Integrity & Malware Extraction', desc: 'Repairing corrupted system binaries without wiping user profiles or data' },
+                { title: 'Windows Recovery & Malware Troubleshooting', desc: 'Using recovery tools and safe-mode checks while protecting user files' },
                 { title: 'Customer-First De-escalation', desc: 'Translating complex technical diagnostics into clear, calm instructions for non-technical users' },
               ].map((val, idx) => (
                 <div
@@ -259,8 +230,8 @@ AVAILABILITY: Immediate Joiner (0 Days Notice) | Ready for 24/7 Rotational Shift
               {[
                 { title: '🖥️ PC Hardware & Assembly', badge: 'Expert', desc: 'Desktop builds, MemTest86, thermal paste, PSU checks' },
                 { title: '🪟 Windows OS & Triage', badge: 'Expert', desc: 'Win 10/11 deployment, DISM/SFC, DDU, malware eradication' },
-                { title: '🌐 Networking & Wi-Fi', badge: 'Advanced', desc: 'Routers, DHCP IP leases, DNS resolvers, ping hop tests' },
-                { title: '📊 SQL & Log Parsing', badge: 'Certified', desc: 'HackerRank Certified SQL, Python error logs, Excel pivot' },
+                { title: '🌐 Networking & Wi-Fi', badge: 'Hands-on', desc: 'Routers, DHCP basics, DNS resolvers, and ping/tracert checks' },
+                { title: '📊 SQL & Log Parsing', badge: 'Certified', desc: 'HackerRank SQL, Python error logs, and Excel pivots' },
               ].map((t, idx) => (
                 <div
                   key={idx}
@@ -306,7 +277,7 @@ AVAILABILITY: Immediate Joiner (0 Days Notice) | Ready for 24/7 Rotational Shift
               </div>
               <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.02)', padding: '0.75rem', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
                 <span style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '0.72rem' }}>SHIFT FLEXIBILITY</span>
-                <strong style={{ color: '#fff' }}>24/7 Rotational Shifts</strong>
+                <strong style={{ color: '#fff' }}>Open to rotational shifts</strong>
               </div>
               <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.02)', padding: '0.75rem', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
                 <span style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '0.72rem' }}>COMMUNICATION</span>
